@@ -6,8 +6,25 @@
     android:background="@color/transparent"
     tools:context="com.pagatoexamen.ya.Fragment.RecargasFragment">
 
-    <!-- claro -->
-    <include layout="@layout/row_claro"/>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <!-- Claro -->
+            <include layout="@layout/row_claro"/>
+
+            <!-- Tuenti -->
+            <include layout="@layout/row_tuenti"/>
+
+            <!-- Tuenti -->
+            <include layout="@layout/row_entel"/>
+
+        </RelativeLayout>
+
+    </ScrollView>
 
 </RelativeLayout>

@@ -23,7 +23,8 @@
         <activity
             android:name=".LoginActivity"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
-        <activity android:name=".MarcasActivity"></activity>
+        <activity android:name=".MarcasActivity" />
+        <activity android:name=".Adapter.RecargaActivity"></activity>
     </application>
 
 </manifest>

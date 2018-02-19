@@ -24,6 +24,7 @@ public class RecargasFragment extends Fragment {
     private View view;
     private RecyclerView claro_list;
     private RecyclerView tuenti_list;
+    private RecyclerView entel_list;
 
     public RecargasFragment() {
         // Required empty public constructor
@@ -36,11 +37,13 @@ public class RecargasFragment extends Fragment {
 
         // Binding
         this.claro_list = this.view.findViewById(R.id.claro_list);
+        this.tuenti_list = this.view.findViewById(R.id.tuenti_list);
+        this.entel_list = this.view.findViewById(R.id.entel_list);
 
         // Init list
         this.createClaroItems();
         this.createTuentiItems();
-
+        this.createEntelItems();
 
         return view;
     }
@@ -48,9 +51,7 @@ public class RecargasFragment extends Fragment {
     private void createClaroItems() {
 
         this.claro_list.setLayoutManager(new StaggeredGridLayoutManager(3, StaggeredGridLayoutManager.VERTICAL));
-
         JSONArray items = new JSONArray();
-
         for(int i = 1; i <= 3; i++) {
 
             JSONObject m = new JSONObject();
@@ -71,10 +72,8 @@ public class RecargasFragment extends Fragment {
 
     private void createTuentiItems() {
 
-        this.claro_list.setLayoutManager(new StaggeredGridLayoutManager(3, StaggeredGridLayoutManager.VERTICAL));
-
+        this.tuenti_list.setLayoutManager(new StaggeredGridLayoutManager(3, StaggeredGridLayoutManager.VERTICAL));
         JSONArray items = new JSONArray();
-
         for(int i = 1; i <= 3; i++) {
 
             JSONObject m = new JSONObject();
@@ -90,6 +89,28 @@ public class RecargasFragment extends Fragment {
         }
 
         MarcaAdapter adapter = new MarcaAdapter(getContext(), items);
-        claro_list.setAdapter(adapter);
+        tuenti_list.setAdapter(adapter);
+    }
+
+    private void createEntelItems() {
+
+        this.entel_list.setLayoutManager(new StaggeredGridLayoutManager(3, StaggeredGridLayoutManager.VERTICAL));
+        JSONArray items = new JSONArray();
+        for(int i = 1; i <= 3; i++) {
+
+            JSONObject m = new JSONObject();
+            try {
+
+                m.put("tipo", "entel");
+                m.put("titulo", "Tiempo aire");
+                items.put(m);
+
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
+        }
+
+        MarcaAdapter adapter = new MarcaAdapter(getContext(), items);
+        entel_list.setAdapter(adapter);
     }
 }

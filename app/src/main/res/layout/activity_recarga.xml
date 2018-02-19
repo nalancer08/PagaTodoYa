@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/login_bk"
+    tools:context="com.pagatoexamen.ya.Adapter.RecargaActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:background="@color/splash_color"
+        android:id="@+id/bar">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="45dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:textColor="@color/white"
+            android:textSize="25sp"
+            android:text="Regresar"
+            android:textAlignment="gravity"
+            android:gravity="center_vertical"
+            android:drawableLeft="@drawable/return_image"
+            android:drawablePadding="15dp"/>
+
+    </RelativeLayout>
+
+</RelativeLayout>
