@@ -1,6 +1,7 @@
 package com.pagatoexamen.ya.Adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.support.v7.widget.RecyclerView;
@@ -47,7 +48,7 @@ public class MarcaAdapter extends RecyclerView.Adapter<BurbujaView> {
         try {
 
             final JSONObject marca = this.tipos.getJSONObject(position);
-            String tipo = marca.getString("tipo");
+            final String tipo = marca.getString("tipo");
             String titulo = marca.getString("titulo");
             final ImageView img = holder.getCover();
             String name = "ic_" + tipo;
@@ -64,9 +65,9 @@ public class MarcaAdapter extends RecyclerView.Adapter<BurbujaView> {
                 @Override
                 public void onClick(View view) {
 
-                    /**Intent intent = new Intent(context, SingleAnimeController.class);
-                    intent.putExtra("anime", anime.toString());
-                    context.startActivity(intent);*/
+                    Intent intent = new Intent(context, RecargaActivity.class);
+                    intent.putExtra("tipo", tipo);
+                    context.startActivity(intent);
 
                 }
             });

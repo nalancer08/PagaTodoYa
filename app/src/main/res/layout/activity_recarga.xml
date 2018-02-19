@@ -16,6 +16,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="45dp"
+            android:id="@+id/back_button"
             android:layout_marginLeft="10dp"
             android:layout_marginTop="10dp"
             android:textColor="@color/white"
@@ -25,6 +26,95 @@
             android:gravity="center_vertical"
             android:drawableLeft="@drawable/return_image"
             android:drawablePadding="15dp"/>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentStart="true"
+        android:paddingHorizontal="40dp"
+        android:layout_below="@+id/bar">
+
+        <!-- Logo -->
+
+        <ImageView
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:layout_centerHorizontal="true"
+            android:src="@mipmap/ic_logo"
+            android:id="@+id/logo"
+            android:layout_marginTop="30dp"/>
+
+        <!-- Phone -->
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/logo"
+            android:layout_marginTop="50dp"
+            android:id="@+id/user_structure"
+            android:weightSum="2">
+
+            <ImageView
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:src="@drawable/ic_user"
+                android:layout_gravity="center"/>
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:textColor="@color/white"
+                android:textAlignment="center"
+                android:inputType="text"
+                android:id="@+id/phone"
+                android:backgroundTint="@color/white"
+                android:layout_marginLeft="10dp"
+                android:text=""/>
+
+        </LinearLayout>
+
+        <!-- Money -->
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/user_structure"
+            android:layout_marginTop="20dp"
+            android:id="@+id/password_structure"
+            android:weightSum="2">
+
+            <ImageView
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:src="@drawable/ic_pass"
+                android:layout_gravity="center"/>
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:textColor="@color/white"
+                android:textAlignment="center"
+                android:id="@+id/money"
+                android:inputType="numberDecimal"
+                android:backgroundTint="@color/white"
+                android:layout_marginLeft="10dp"/>
+
+        </LinearLayout>
+
+        <!-- Login button -->
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_below="@id/password_structure"
+            android:layout_marginTop="40dp"
+            android:background="@drawable/button_blue_login"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            android:id="@+id/continue_button"
+            android:text="CONTINUAR"/>
 
     </RelativeLayout>
 

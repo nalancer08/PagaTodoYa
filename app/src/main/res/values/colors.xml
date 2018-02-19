@@ -7,6 +7,7 @@
     <color name="splash_color">#00A1E1</color>
     <color name="login_bk">#24333D</color>
     <color name="status_bar">#0273AF</color>
+    <color name="dialog_bk">#2B3842</color>
 
     <!-- Helpers and basics -->
     <color name="white">#FFF</color>
