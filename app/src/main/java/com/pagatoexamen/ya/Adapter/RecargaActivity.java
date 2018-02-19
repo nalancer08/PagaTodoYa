@@ -7,10 +7,12 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Color;
 import android.graphics.Point;
+import android.graphics.drawable.ColorDrawable;
 import android.media.Image;
 import android.os.Build;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.format.Time;
 import android.view.Display;
 import android.view.View;
 import android.view.Window;
@@ -74,6 +76,7 @@ public class RecargaActivity extends AppCompatActivity {
     private void setContinueButton() {
 
         this.continue_button.setOnClickListener(new View.OnClickListener() {
+            @SuppressLint("SetTextI18n")
             @Override
             public void onClick(View view) {
 
@@ -82,17 +85,21 @@ public class RecargaActivity extends AppCompatActivity {
                 dialog.setCanceledOnTouchOutside(true);
                 dialog.getWindow().setLayout(getX() - 20, getY() - threeRuleY(250));
                 //dialog.getWindow().setBackgroundDrawableResource(R.drawable.dialog_borders);
-                //dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+                dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
                 //dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
                 //dialog.getWindow().getDecorView().setBackgroundResource(R.color.transparent);
                 dialog.show();
 
                 // Setting dialog
+                Calendar c = Calendar.getInstance();
                 TextView hour = dialog.findViewById(R.id.hour);
-                hour.setText(Calendar.getInstance().getTime().toString());
+                hour.setText(c.getTime().getHours() + ":" + c.getTime().getMinutes());
 
+                int year = Calendar.getInstance().get(Calendar.YEAR);
+                int month = Calendar.getInstance().get(Calendar.MONTH) + 1;
+                int day = Calendar.getInstance().get(Calendar.DAY_OF_MONTH);
                 TextView date = dialog.findViewById(R.id.date);
-                date.setText(new SimpleDateFormat("MMM d, yyyy").toString());
+                date.setText(day + "/" + month + "/" + year);
 
                 ImageView logo = dialog.findViewById(R.id.logo);
                 logo.setImageBitmap(logo_bm);
@@ -116,6 +123,20 @@ public class RecargaActivity extends AppCompatActivity {
                     @Override
                     public void onClick(View view) {
                         dialog.cancel();
+                        final Dialog d = new Dialog(RecargaActivity.this);
+                        d.setContentView(R.layout.dialog_recarga_complet);
+                        d.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+                        d.setCanceledOnTouchOutside(true);
+                        d.show();
+
+                        Button acept = d.findViewById(R.id.acept);
+                        acept.setOnClickListener(new View.OnClickListener() {
+                            @Override
+                            public void onClick(View view) {
+                                d.cancel();
+                                finish();
+                            }
+                        });
                     }
                 });
 

@@ -2,8 +2,10 @@ package com.pagatoexamen.ya;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.Build;
+import android.preference.Preference;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -102,6 +104,10 @@ public class LoginActivity extends AppCompatActivity {
                     public void onResponse(Object response) {
 
                         Log.d("DXGOP", "Respuesta : " + response);
+                        SharedPreferences prefs = getSharedPreferences(getPackageName(), 0);
+                        SharedPreferences.Editor editor = prefs.edit();
+                        editor.putString("login", response.toString());
+                        editor.commit();
                         loader.cancel();
                         route();
                     }
