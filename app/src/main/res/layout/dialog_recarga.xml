@@ -13,6 +13,8 @@
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:weightSum="3"
+        android:id="@+id/controls"
+        android:layout_centerHorizontal="true"
         android:layout_marginTop="30dp"
         android:layout_marginHorizontal="30dp">
 
@@ -31,7 +33,8 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:textColor="@color/white"
-            android:text="12345"
+            android:text="10:07"
+            android:id="@+id/hour"
             android:textAlignment="gravity"
             android:drawablePadding="10dp"
             android:gravity="center_vertical"
@@ -42,11 +45,126 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:textColor="@color/white"
-            android:text="12345"
+            android:text="01/07/1994"
+            android:id="@+id/date"
             android:textAlignment="gravity"
             android:drawablePadding="10dp"
             android:gravity="center_vertical"
             android:drawableLeft="@drawable/ic_date"
+            android:layout_weight="1"/>
+
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="35dp"
+        android:layout_below="@+id/controls"
+        android:layout_centerHorizontal="true"
+        android:layout_marginHorizontal="25dp"
+        android:layout_marginTop="21dp"
+        android:text="Se realizara una recagar"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        android:id="@+id/text_do"
+        android:textStyle="bold" />
+
+    <ImageView
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_below="@+id/text_do"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="14dp"
+        android:id="@+id/logo"
+        android:src="@drawable/ic_claro" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:layout_below="@+id/logo"
+        android:layout_centerHorizontal="true"
+        android:layout_marginHorizontal="25dp"
+        android:layout_marginTop="21dp"
+        android:text="Numero telefonico"
+        android:textAlignment="center"
+        android:textColor="@color/white" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="35dp"
+        android:layout_below="@+id/textView"
+        android:layout_centerHorizontal="true"
+        android:layout_marginHorizontal="25dp"
+        android:text="5512345678"
+        android:id="@+id/phone"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="22sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/textViewMonto"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:layout_below="@+id/phone"
+        android:layout_centerHorizontal="true"
+        android:layout_marginHorizontal="25dp"
+        android:layout_marginTop="12dp"
+        android:text="Monto a recargar"
+        android:textAlignment="center"
+        android:textColor="@color/white" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="35dp"
+        android:layout_below="@+id/textViewMonto"
+        android:layout_centerHorizontal="true"
+        android:layout_marginHorizontal="25dp"
+        android:text="$200.00"
+        android:id="@+id/mount"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="22sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:layout_below="@+id/mount"
+        android:id="@+id/text"
+        android:layout_centerHorizontal="true"
+        android:layout_marginHorizontal="15dp"
+        android:layout_marginTop="23dp"
+        android:text="Realiza su pago oportunamente en la sucursal de referencia"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="12sp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="35dp"
+        android:layout_below="@id/text"
+        android:weightSum="2">
+
+        <Button
+            android:id="@+id/cancel"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginHorizontal="15dp"
+            android:layout_weight="1"
+            android:background="@drawable/button_blue_login"
+            android:text="Cancelar"
+            android:textColor="@color/white" />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:textColor="@color/white"
+            android:text="Aceptar"
+            android:id="@+id/acept"
+            android:layout_marginHorizontal="15dp"
+            android:background="@drawable/button_blue_login"
             android:layout_weight="1"/>
 
     </LinearLayout>
